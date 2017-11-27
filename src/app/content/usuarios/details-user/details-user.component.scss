@@ -79,7 +79,7 @@
 		}
 	}
 	.frms{background: #fff; width: 100%; min-height: 400px; padding: 20px;margin-top: 30px;box-shadow: 0px 5px 5px rgba(150,150,150,0.3);display: table; width: 100%;}
-	.box{padding: 20px; background: #fff}
+	.col-12{padding: 20px; background: #fff;margin-top: 20px}
 }
 
 @media(max-width: 850px){
@@ -88,7 +88,55 @@
 	.line-white .fll,
 	.line-white .flr{float: none !important;}
 	.line-white ul li{display: block !important; border: 0px !important;}
-	.col-infos .image-content{float: none;position: relative;margin: -110px auto 0px auto}
+	.col-infos .image-content{float: none !important;position: relative !important;margin: -110px auto 0px auto !important}
+	.col-infos .imgBanner{text-align: left !important;left: 10px !important}
+	.col-infos .imgBanner img{width: 100px !important;}
 }
 
+.col-12{
+	font-family: map-get($fonts, MyriadPro);
+	margin-bottom: 30px;
+	.col-8{
+		span{font-weight: 100;font-family: map-get($fonts,OpenSansL); font-size: 12px}
+		select,
+		input{ width: 100px; border: 1px solid rgba(150,150,150,0.2)}				
+	}
+	.box{		
+		border-bottom: 1px solid rgba(150,150,150,0.2);
+		a{color:#000;display: block;padding: 20px}
+		a:hover{@include background-opacity(map-get($colors, greenLight), 0.1)}
+		h4{font-size: 18px; text-transform: capitalize}
+		p{font-family: map-get($fonts,OpenSansL);font-size: 14px; font-style: italic}
+		&:last-child{border-bottom: 0px}
+		ul li{
+			display: inline-block;
+			padding: 0px 5px;
+			&:first-child i{color: map-get($colors, danger)}
+			&:nth-child(2) i{color: map-get($colors, warning)}
+			&:last-child i{color: map-get($colors,info)}
+		}		
+	}		
+}
 
+nav{
+	float: right;
+	.pagination{
+		padding: 0;
+		margin: 0;
+		li{
+			display: inline-block;
+			a{
+				cursor: pointer;
+				padding: 5px 10px;
+				border: 1px solid rgba(100,100,100,0.2)
+			}
+			.control{@include background-opacity(map-get($colors, greenLight), 0.5)}
+		}
+		.active{
+			pointer-events: none;
+			a{
+				@include background-opacity(map-get($colors, greenLight), 0.5)
+			}
+		}
+	}
+}

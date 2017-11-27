@@ -6,6 +6,7 @@ import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { UsuariosComponent } from './usuarios.component';
 import { BreadcrumbModule } from './../../_shared/index';
 import { DetailsUserComponent } from './details-user/details-user.component';
+import { ReposComponent } from './repos/repos.component';
 
 import { Filter } from './../pipeFilter';
 
@@ -19,9 +20,10 @@ import { Filter } from './../pipeFilter';
 	declarations: [
 		UsuariosComponent,
 		DetailsUserComponent,
-		Filter
+		Filter,
+		ReposComponent
     ],	
-	providers:[]
+	providers:[Filter]
 })
 
 export class UsuariosModule {}

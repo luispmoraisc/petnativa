@@ -1,0 +1,26 @@
+@import '../../../../styles.scss';
+.box{
+	padding: 20px; 
+	background: #fff;
+	display: table; 
+	width: 100%;
+	font-family: map-get($fonts,MyriadPro);
+	h4{font-size: 18px; text-transform: capitalize}
+	ul li{
+		display: inline-block;
+		padding: 0px 5px;
+		&:first-child i{color: map-get($colors, danger)}
+		&:nth-child(2) i{color: map-get($colors, warning)}
+		&:last-child i{color: map-get($colors,info)}
+	}	
+	.img-circle{width: 180px; height: 180px;border: 3px solid #fff}
+	.autor{background:#fbfbfb}
+}
+
+@media(max-width: 800px){
+	.box .img-circle{width: 90px; height: 90px}
+}
+
+@media(max-width: 767px){
+	.box .img-circle{width: 180px; height: 180px}	
+}

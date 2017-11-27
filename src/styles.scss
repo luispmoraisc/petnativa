@@ -52,7 +52,7 @@ $colors : (
     padding: 0px 15px;  
     margin: 0 auto;
     @media only screen and(max-width: 1200px){
-        width: 970px;
+        width: 1024px;
     }
 
     @media only screen and(max-width: 992px){
@@ -127,4 +127,5 @@ ul li{list-style: none; margin: 0; padding: 0}
 .col-3{@include col(2,8,15px,middle)}
 .col-4{@include col(2,6,15px,middle)}
 .col-6{@include col(2,4,15px,middle)}
+.col-8{@include col(2,3,15px,middle)}
 .col-12{@include col(2,2,15px,middle)}

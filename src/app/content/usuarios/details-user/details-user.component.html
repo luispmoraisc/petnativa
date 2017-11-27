@@ -44,8 +44,75 @@
 			</div>
 		</div>	
 		<div class="col-12">
-			<div class="box">
-				<h4>Repositórios</h4>
+			<div class="col-4">
+				<h3>Repositórios</h3>
+			</div>			
+			<div class="col-8">
+				<div class="flr">					
+					<input class="input-frm" type="text" [(ngModel)]="filterString" placeholder="Buscar" (keyup)="filtrarTabela($event)"/>
+					<span>Ordernar:</span>
+					<select class="input-frm" #ordenar (change)="reordenar(ordenar.value)">
+						<option value="0">Decrescente</option>
+						<option value="1">Crescente</option>						
+					</select>					
+					<span>Mostrar:</span>
+					<select class="input-frm" #grid (change)="visualizacao(grid.value)">
+						<option *ngFor="let option of amostras" value="{{option.key}}">
+							{{option.key}}
+						</option>
+					</select>					
+				</div>				
+			</div>		
+			<div class="clear"></div>	
+			<div *ngFor="let item of listRepos | filter: filterString:listRepos | slice:start:end" class="box">
+				<a routerLink="/usuarios/repos/{{item.full_name}}">
+					<h4>{{item.name}}</h4>
+					<p>{{item.description}}</p>
+					<ul>
+						<li>
+							<i class="icon-keyboard"></i>
+							<span>{{item.language}}</span>
+						</li>
+						<li>
+							<i class="icon-star"></i>
+							<span>{{item.stargazers_count}}</span>
+						</li>
+						<li>
+							<i class="icon-fork"></i>
+							<span>{{item.forks_count}}</span>
+						</li>
+					</ul>
+				</a>
+			</div>
+			<div class="footerTable">
+				<div class="col-4 mt10">
+					<div class="fll">Página</div>
+					<div class="fll tac">
+						{{pagAtual}} 
+						<span>de</span> 
+						{{nPages}}
+					</div>			
+				</div>		
+				<div class="col-8 mt10">
+					<nav>
+						<ul class="pagination">
+							<li>
+								<a (click)="PrevPage()" class="control">
+									<span><i class="icon-left-big"></i></span>
+								</a>
+							</li>
+							<li *ngFor='let pag of pagination | slice:startPagination:endPagination;' [ngClass]="{'active' : pagAtual === pag.pag}">
+								<a *ngIf="pagAtual === pag.pag">{{pag.pag}}</a>
+								<a *ngIf="pagAtual !== pag.pag"(click)="mudarPagina(pag.pag)">{{pag.pag}}</a>
+							</li>
+							<li>
+								<a (click)="NextPage()" class="control">
+									<span><i class="icon-right-big"></i></span>
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>	
 	</div>

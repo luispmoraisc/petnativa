@@ -33,4 +33,9 @@ nav .dropdown-notifications ul .infos span{font-size: 10px; font-family: map-get
 .icon-guidedog{color: map-get($colors, greenDark)}
 .icon-food{color: map-get($colors, warning)}
 .icon-food-1{color: map-get($colors, danger)}
-.collapse{margin-left: 0px !important}
+.collapse{margin-left: 0px !important;}
+
+@media(max-width: 767px){
+	.area-toggle{margin-left: 0px !important}
+	.dropdown-notifications{left: -140px; right: inherit}
+}

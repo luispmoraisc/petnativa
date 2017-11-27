@@ -12,11 +12,15 @@ export class NavComponent implements OnInit {
 		private sideBar : SidebarService
 	) { }
 
-	user					: string;
-	dropdownUser 			: boolean = false;
-	dropdownNotification 	: boolean = false;
-	open 					: boolean = true;
+	user: string;
+	dropdownUser: boolean = false;
+	dropdownNotification: boolean = false;
+	open : boolean = true;
+	screenW : any = (window.screen.availWidth);
 	ngOnInit() {
+		if(this.screenW < 768){
+			this.open = false;
+		}
 		this.user = localStorage.getItem('user');
 	}
 
@@ -26,10 +30,6 @@ export class NavComponent implements OnInit {
 			return;
 		else
 			this.closeDropDown();
-	}
-
-	onClick(event){
-		console.log(event);
 	}
 
 	dropdown(option){

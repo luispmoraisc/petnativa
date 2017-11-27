@@ -1,0 +1,39 @@
+<div *ngIf="repos">
+	<app-breadcrumb [heading]="repos.name" [icon]="'icon-box'"></app-breadcrumb>
+	<div class="box">		
+		
+		<div class="clear"></div>	
+		<div class="col-4 autor">
+			<h4>Autor:</h4>
+			<div class="tac">
+				<img src="{{repos.owner.avatar_url}}" class="img-circle"/>
+				<p>{{repos.owner.login}}</p>				
+			</div>						
+		</div>
+		<div class="col-8">
+			<div class="col-6">
+				<h4>{{repos.name}}</h4>				
+			</div>			
+			<div class="col-6">
+				<ul class="flr">
+					<li>
+						<i class="icon-keyboard"></i>
+						<span>{{repos.language}}</span>
+					</li>
+					<li>
+						<i class="icon-star"></i>
+						<span>{{repos.stargazers_count}}</span>
+					</li>
+					<li>
+						<i class="icon-fork"></i>
+						<span>{{repos.forks_count}}</span>
+					</li>
+				</ul>
+			</div>	
+			<div class="clear"></div>
+			<div class="col-12">
+				<p>{{repos.description}} <a href="{{repos.html_url}}" target="_blank">{{repos.html_url}}</a></p>
+			</div>			
+		</div>		
+	</div>
+</div>

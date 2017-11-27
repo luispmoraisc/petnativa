@@ -11,7 +11,7 @@ export class SidebarService{
 		return this.subject.asObservable();
 	}	
 
-	sideBar(){
+	sideBar(){				
 		if(this.open === true)
 			this.open = false;
 		else

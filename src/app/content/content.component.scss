@@ -1,3 +1,7 @@
 @import '../../styles.scss';
 .content{margin-left: 252px; min-height: 100vh;position: relative; margin-top: 50px;z-index: 1;transition: 0.8s; padding: 20px;}
 .collapse{margin-left: 0px !important}
+
+@media(max-width: 767px){
+	.content{margin-left: 0px !important}
+}
