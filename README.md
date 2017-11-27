@@ -1,29 +1,22 @@
 # PetNativa
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli)
+Version 1.2.7
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para executar o projeto é necessário ter NodeJS instalado na máquina, assim como Angular CLI. Com ambos instalados execute o comando `npm install` para baixar e instalar as dependências do projeto, após essa etapa execute `ng serve` abra o navegador e digite a url: http://localhost:4200
 
-## Code scaffolding
+## Trabalhando no projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para gerar um novo componente abra o projeto pelo terminal e navegue até a pasta onde deseja criá-lo, digite `ng g c nome-do-componente`. Para criar serviços, pipe, diretivas, classes, guards, interfaces, enuns, módulos basta digitar `ng g directive|pipe|service|class|guard|interface|enum|module nome-do-que-estou-criando`.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Execute `ng build` para compilar o projeto. No final da compilação será criado um diretório na raiz do projeto com o nome `dist/`. Use a flag `--prod` para compilar em modo de produção.
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# petnativa
 # petnativa
