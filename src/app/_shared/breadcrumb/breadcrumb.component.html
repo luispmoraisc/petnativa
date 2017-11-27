@@ -1,0 +1,9 @@
+<div class="breadcrumb">
+	<ul class="breadleft">
+		<li *ngIf="!other"><i class="{{icon}}"></i> {{heading}}</li>
+		<li *ngIf="other"><a [routerLink]="['/usuarios']"><i class="{{icon}}"></i> {{heading}}</a></li>
+		<li *ngIf="other">/</li>
+		<li>{{other}}</li>
+	</ul>	
+</div>
+<div class="clear h50"></div>

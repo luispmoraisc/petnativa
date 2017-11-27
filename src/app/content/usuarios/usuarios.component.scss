@@ -1,0 +1,54 @@
+@import '../../../styles.scss';
+.content-usuarios{
+	@include background-opacity(map-get($colors, greenLight), 0.2);
+	.box{
+		background: #fff;
+		padding: 15px;
+		display: table;
+		width: 100%;
+		box-shadow: 0px 5px 5px rgba(100,100,100,0.1);
+		position: relative;
+		.image{
+			float: left;
+			width: 60px;
+			img{
+				width: 100%;
+				border-radius: 50%;
+				border: 2px solid #f5f5f5;
+			}
+		}
+		.infos{
+			margin-left: 70px;
+			font-family: map-get($fonts, MyriadPro);
+			a{color: map-get($colors,greenLight)}
+			.linkGit{
+				color: map-get($colors,greenDark);
+				i{
+					font-size: 20px
+				}
+			}
+		}		
+		.delete{
+			position: absolute;
+			right: 10px; 
+			top: 10px;
+			opacity: 0.3;
+			cursor: pointer;
+			transition: 0.8s;			
+		}
+		.delete:hover{transform: rotate(180deg)}
+	}
+
+	.input-group{
+		position: relative; 
+		margin: 0 auto;
+		float: none;
+		padding: 0px;
+		i{
+			position: absolute; 
+			right: 5px;
+			top: 7px;
+			opacity: 0.5
+		}
+	}
+}

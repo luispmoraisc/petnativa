@@ -1,0 +1,92 @@
+<nav class="navbar">
+	<div class="area-toggle {{cssCollapse()}}">
+		<a (click)="toggle()">
+			<i class="icon-menu-1"></i>
+		</a>		
+	</div>
+	<img src="./assets/img/logo.svg" class="imageNav" [ngClass]="{'in' : open === false}"/>		
+	<div class="actions">
+		<ul>
+			<li (click)="dropdown('notifications')" >
+				<a>
+					<i class="icon-bell"></i>
+					<span class="caret">2</span>
+				</a>
+				<div class="dropdown dropdown-notifications" [ngClass]="{'collapse animated fadeInLeft' : dropdownNotification}">
+					<div class="header">
+						Notificações
+					</div>
+					<ul>
+						<li>
+							<a href="#">
+								<div class="icon">
+									<i class="icon-guidedog"></i>
+								</div>			
+								<div class="infos">
+									<p>Novo pedido de dieta</p>
+									<span class="time">18:09</span>
+								</div>													
+							</a>
+						</li>	
+						<li>
+							<a href="#">
+								<div class="icon">
+									<i class="icon-food"></i>
+								</div>			
+								<div class="infos">
+									<p>Dieta #98297 aguardando aprovação</p>
+									<span class="time">14:32</span>
+								</div>													
+							</a>
+						</li>	
+						<li>
+							<a href="#">
+								<div class="icon">
+									<i class="icon-food-1"></i>
+								</div>			
+								<div class="infos">
+									<p>Dieta #98297 rejeitada</p>
+									<span class="time">09:14</span>
+								</div>													
+							</a>
+						</li>	
+						<li>
+							<a href="#">
+								<div class="icon">
+									<i class="icon-guidedog"></i>
+								</div>			
+								<div class="infos">
+									<p>Dieta #98297 pronta</p>
+									<span class="time">18:09</span>
+								</div>													
+							</a>
+						</li>						
+					</ul>
+				</div>
+			</li>
+			<li (click)="dropdown('user')">
+				<a>
+					<img src="./assets/img/user.jpg"/>
+					{{user}}
+					<i class="icon-down-dir"></i>
+				</a>
+				<div class="dropdown" [ngClass]="{'collapse animated fadeInLeft' : dropdownUser}">
+					<ul>
+						<li>
+							<a href="#">
+								<i class="icon-user-1"></i>
+								Perfil
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="icon-logout-1"></i>
+								Sair
+							</a>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+	</div>
+</nav>

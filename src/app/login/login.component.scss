@@ -1,0 +1,17 @@
+@import "../../styles.scss";
+
+.container{
+	@include container();
+}
+
+.content-login{
+	@include alignAllCenter();
+	background: map-get($colors, greenDark);
+	width: 100vw;
+	height: 100vh;
+}
+
+.content-frm{width: 300px; display: table-cell;text-align: center}
+.content-frm img{margin-bottom: 15px; width: 120px}
+.content-frm .input-frm{height: 40px;line-height: 40px}
+.content-frm .input-frm:focus{border-left: 3px solid map-get($colors, greenDark / 2);}

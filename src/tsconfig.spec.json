@@ -6,13 +6,10 @@
     "module": "commonjs",
     "target": "es5",
     "types": [
-      "jasmine",
       "node"
     ]
   },
-  "files": [
-    "test.ts"
-  ],
+  "files": [],
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"

@@ -1,0 +1,53 @@
+<div *ngIf="user !== null">
+	<app-breadcrumb [heading]="'Usuários'" [icon]="'icon-user-1'" [other]="user.name"></app-breadcrumb>
+	
+	<div class="content-profile">
+		<div class="col-infos">		
+			<div class="imgBanner">
+				<img src="./assets/img/logo.svg" />		
+			</div>
+			<div class="infos">
+				<div class="image-content">
+					<img src="{{user.avatar_url}}" class="img-circle" />
+					<div class="effect-hover">	
+						<a class="c-p">
+							<i class="icon-picture"></i><br/>
+							<span>Ver imagem</span>
+						</a>
+					</div>
+				</div>	
+				<div class="line-white">
+					<div class="fll">
+						<h4>{{user.name}}</h4>
+						<p class="ml30">{{user.login}}</p>
+						<p class="ml30"><i class="icon-location"></i>{{user.location}}</p>
+					</div>				
+					<ul class="flr mt10">
+						<li class="tac">
+							<h4 class="m0">{{user.public_repos}}</h4>
+							<span>Repositórios público</span>
+						</li>
+						<li class="tac">
+							<h4 class="m0">{{user.public_gists}}</h4>
+							<span>Gists</span>
+						</li>
+						<li class="tac">
+							<h4 class="m0">{{user.followers}}</h4>
+							<span>Seguidores</span>
+						</li>						
+						<li class="tac">
+							<h4 class="m0">{{user.following}}</h4>
+							<span>Seguindo</span>
+						</li>
+					</ul>
+				</div>			
+			</div>
+		</div>	
+		<div class="col-12">
+			<div class="box">
+				<h4>Repositórios</h4>
+			</div>
+		</div>	
+	</div>
+</div>
+

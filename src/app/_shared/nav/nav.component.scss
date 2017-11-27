@@ -1,0 +1,36 @@
+@import "../../../styles.scss";
+nav{position: fixed; top: 0; left: 0;width: 100%;background: map-get($colors,greenLight);z-index: 2}
+nav .area-toggle{width: 50px; float: left; margin-left: 252px;line-height: 50px;transition: 0.8s}
+nav .area-toggle a{cursor: pointer;display: block; width: 50px; height: 50px;text-align: center;transition: 0.5s}
+nav .area-toggle i{font-size: 20px; color:#fff}
+nav .imageNav{float: left; height: 50px; margin-left: 10px; display: none}
+nav ul{float: right;padding: 0px}
+nav ul li{display: inline-block;position: relative;}
+nav ul li a{color:#fff; font-family: map-get($fonts, MyriadPro); cursor: pointer; line-height: 50px;display: block;padding: 0px 10px}
+nav ul li a img{width: 40px; height: 40px; border-radius: 50%;border: 2px solid #fff;float: left;position: relative; top: 5px;margin-right: 5px}
+nav ul li a .caret{position: absolute; width: 18px; height: 18px; border-radius: 50%;color:#fff; right: 5px; top: 5px;font-size: 12px; text-align: center;background: map-get($colors,greenDark);line-height: 18px}
+nav a:hover{background: rgba(0,0,0,0.1)}
+
+nav .dropdown{position: absolute;right: 0;width: 200px;box-shadow: 0px 5px 5px rgba(140,140,140,0.2);display: none; background:#fff}
+nav .dropdown ul{width: 100%;float: none;padding: 0;}
+nav .dropdown li{display: block}
+nav .dropdown li a{color:#000;display: block;line-height: 36px; font-family: map-get($fonts, OpenSansL);font-size: 14px}
+nav .dropdown li a:hover{background: rgba(200,200,200,0.1);}
+.collapse{display: block !important}
+
+nav .header{padding: 10px 10px; background: map-get($colors, greenDark); color:#fff; font-family: map-get($fonts,MyriadPro);}
+nav .dropdown-notifications{width: 300px;background:#fff}
+nav .dropdown-notifications ul{padding: 0px;max-height: 200px; overflow-y: scroll}
+nav .dropdown-notifications ul li{border-bottom: 1px solid rgba(150,150,150,0.1);}
+nav .dropdown-notifications ul li a{padding: 5px; line-height: 20px; font-family: OpenSansL; display: table; width: 100%}
+nav .dropdown-notifications ul li a:hover{@include background-opacity(map-get($colors,greenLight), 0.1)}
+nav .dropdown-notifications ul .icon{float: left;width: 40px;height: 40px;text-align: center;font-size: 18px;line-height: 40px;}
+nav .dropdown-notifications ul .infos{float: left; padding: 0px 10px;}
+nav .dropdown-notifications ul .infos p{font-family: map-get($fonts, MyriadPro)}
+nav .dropdown-notifications ul .infos span{font-size: 10px; font-family: map-get($fonts,OpenSansL)}
+
+.in{display: block !important}
+.icon-guidedog{color: map-get($colors, greenDark)}
+.icon-food{color: map-get($colors, warning)}
+.icon-food-1{color: map-get($colors, danger)}
+.collapse{margin-left: 0px !important}

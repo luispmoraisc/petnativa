@@ -1,0 +1,24 @@
+<app-breadcrumb [heading]="'Usuários'" [icon]="'icon-user-1'"></app-breadcrumb>
+<div class="content-usuarios">
+	<div class="col-12">
+		<div class="col-6 input-group">
+			<input type="text" class="input-frm" placeholder="Buscar Usuário" [(ngModel)]="filterString"/>
+			<i class="icon-search"></i>
+		</div>
+	</div>
+	<div class="col-4" *ngFor="let user of listUsers | filter: filterString:listUsers; index as i">		
+		<div class="box">
+			<div class="image">
+				<img src="{{user.avatar_url}}"/>
+			</div>
+			<div class="infos">
+				<h3>{{user.login}}</h3>
+				<a routerLink="/usuarios/details/{{user.login}}">Perfil</a><br/>
+				<a href="{{user.html_url}}" class="linkGit" target="_blank">Visitar no GitHub <i class="icon-github-circled"></i></a>
+			</div>
+			<div class="delete" title="Excluir" (click)="removeUser(i)">
+				<i class="icon-cancel"></i>
+			</div>			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<div *ngIf="alerts.length > 0" class="boxAlerts">
+    <div *ngFor="let alert of alerts" class="{{ cssClass(alert) }}">	
+        <div class="icon">    	
+        	<i [ngClass]="{'icon-ok-circled': alert.type === 0, 'icon-cancel-circled': alert.type === 1, 'icon-info-circled' : alert.type === 2, 'icon-warning': alert.type === 3}"></i>
+        </div>
+        <span class="OpenSansB pl50">    	
+        	{{alert.message}}
+    	</span>
+        <a (click)="removeAlert(alert)">&times;</a>
+    </div>
+</div>

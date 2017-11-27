@@ -1,0 +1,13 @@
+@import '../../../styles.scss';
+.box{width: 100%;background:#fff;padding: 10px 20px;position: relative; box-shadow: 0px 5px 5px rgba(100,100,100,0.2);display: table}
+.box img{width: 100%;}
+.box h4,
+.col-4 h5{font-family: map-get($fonts,MyriadPro)}
+.box .number{font-family: map-get($fonts,OpenSansL); font-size: 2.5em; font-style: italic}
+.box .info{font-family: map-get($fonts,OpenSansB); font-size: 12px; color: map-get($colors,greenLight)}
+.box .icon{position: absolute; bottom: 0px; right: -10px; font-size: 5em; opacity: 0.1; color: map-get($colors, greenLight)}
+.box .reject{color: map-get($colors, danger)}
+
+.col-4{text-align: center}
+.mt23{margin-top: 23px;}
+.mb23{margin-bottom: 23px}

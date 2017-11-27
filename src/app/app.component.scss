@@ -1,0 +1,5 @@
+@import "../styles.scss";
+
+.content-all{
+	@include col(2,5,15px,top)
+}

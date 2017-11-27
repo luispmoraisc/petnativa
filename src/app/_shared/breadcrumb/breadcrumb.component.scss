@@ -1,0 +1,22 @@
+@import "../../../styles.scss";
+.breadcrumb{
+	position: absolute; 
+	top: 0;
+	left: 0; 
+	width: 100%; 
+	background: #f7f7f7; 
+	box-shadow: 3px 3px 7px rgba(15,16,21,.1); 
+	padding: 0px 15px;
+	z-index: 1;
+	.breadleft{padding: 8px 0px;}
+	li {
+		display: inline-block;
+		line-height: 40px;
+		font-size: 18px; 
+		color:#000;
+		font-family: map-get($fonts,MyriadPro);
+		a{color: map-get($colors, greenLight)}
+	}
+}
+
+.h50{height: 50px}

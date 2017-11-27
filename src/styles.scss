@@ -1,0 +1,130 @@
+*{padding: 0;margin: 0; box-sizing: border-box;}
+
+// fonts
+$fonts : (
+    MyriadPro     : MyriadPro,
+    MyriadRegular : MyriadRegular,
+    SourceSans    : SourceSans,
+    OpenSansL     : OpenSansL,
+    OpenSansR     : OpenSansR,
+    OpenSansSB    : OpenSansSB,
+    OpenSansB     : OpenSansB,
+    OpenSansEB    : OpenSansEB 
+);
+
+
+$colors : (
+    greenDark   : #00704A,
+    greenLight  : #5d9e18,
+    danger      : #d9534f,
+    warning     : #f0ad4e,
+    info        : #5bc0de,
+    success     : #5cb85c,
+    white       : #fff,
+);
+
+@mixin alignAllCenter(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin row() {
+    font-size: 0;
+}
+
+@mixin col($col, $sum, $gap: 1em, $align: top,$first: false, $last: false) {
+    width: 100%;
+    font-size: 16px;
+    float: left;
+    box-sizing: border-box;
+    padding: $gap;
+
+    @media only screen and (min-width: 768px) {
+        width: percentage($col/$sum);
+        vertical-align: $align;
+    }   
+}
+
+@mixin container(){
+    width: 1170px;
+    position: relative;
+    padding: 0px 15px;  
+    margin: 0 auto;
+    @media only screen and(max-width: 1200px){
+        width: 970px;
+    }
+
+    @media only screen and(max-width: 992px){
+        width: 750px
+    }
+
+    @media only screen and(max-width: 768px){
+        width: 100%;
+    }
+}
+
+@mixin background-opacity($color,$opacity: 0.3){
+    background: $color;
+    background: rgba($color,$opacity);
+}
+
+body{overflow-x: hidden; @include background-opacity(map-get($colors, greenLight), 0.2);}
+
+.input-frm{
+    width: 100%;
+    font-family: map-get($fonts,MyriadPro); 
+    padding: 5px;  
+    border: 3px solid #fff;
+    &:focus{
+        box-shadow: 0px 0px 0px transparent;
+        outline: transparent;
+    }
+}
+
+.hidden{display: none !important}
+// loader
+.contentLoading{position: fixed;width: 100%; height: 100%; background: rgba(255,255,255,0.5); top: 0;left: 0; z-index: 999999;display: block;margin: 0 !important; padding: 0}
+.contentLoading .align{width: 100%;height: 100%; @include alignAllCenter()}
+.contentLoading div{display: table-cell; vertical-align: middle;text-align: center}
+.contentLoading i{font-size: 2em}
+.contentLoading p{display: block; font-family: map-get($fonts,MyriadPro)}
+.loading{display: block;}
+
+// alerts
+.alert{position: fixed; top: 10px; right: 10px;font-family: map-get($fonts, OpenSansSB);padding: 15px}
+.alert a{cursor: pointer}
+.alert-success{background: map-get($colors, success) * 2.4; color: map-get($colors,success) /2}
+.alert-danger{background: map-get($colors, danger) * 2.9; color: map-get($colors,danger) / 2}
+.alert-info{background: map-get($colors, info) * 2.5; color: map-get($colors,info) / 2}
+.alert-warning{background: map-get($colors, warning) * 2.5; color: map-get($colors,warning) / 2}
+
+a{text-decoration: none}
+ul li{list-style: none; margin: 0; padding: 0}
+
+.clear{clear: both}
+.img-circle{border-radius: 50%; border: 1px solid #fff;overflow: hidden}
+.fll{float: left;}
+.flr{float: right;}
+.tac{text-align: center}
+
+.m0{margin: 0 !important;}
+.mt10{margin-top: 10px !important;}
+.mt20{margin-top: 20px !important;}
+.mt30{margin-top: 30px !important;}
+.mb10{margin-bottom: 10px !important;}
+.mb20{margin-bottom: 20px !important;}
+.mb30{margin-bottom: 30px !important;}
+.ml10{margin-left: 10px !important;}
+.ml20{margin-left: 20px !important;}
+.ml30{margin-left: 30px !important;}
+.mr10{margin-right: 10px !important;}
+.mr20{margin-right: 20px !important;}
+.mr30{margin-right: 30px !important;}
+
+
+// grid
+.col-3{@include col(2,8,15px,middle)}
+.col-4{@include col(2,6,15px,middle)}
+.col-6{@include col(2,4,15px,middle)}
+.col-12{@include col(2,2,15px,middle)}

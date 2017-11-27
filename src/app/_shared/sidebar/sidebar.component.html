@@ -1,0 +1,29 @@
+<div class="sidebar {{cssClass()}}">
+	<div class="content-logo">
+		<img src="./assets/img/logo.svg"/>
+	</div>
+	<div class="user">
+		<img src="./assets/img/user.jpg"/>
+		<div class="infos">
+			<h4>{{user}}</h4>			
+			<a><i class="icon-cog-alt"></i>Perfil</a>
+		</div>
+	</div>
+	<h4 class="title">Módulos</h4>
+	<div class="navigation">
+		<ul>
+			<li routerLinkActive="active">
+				<a [routerLink]="['/dashboard']">
+					<i class="icon-gauge"></i>
+					<span>Dashboard</span>
+				</a>
+			</li>
+			<li routerLinkActive="active">
+				<a [routerLink]="['/usuarios']">
+					<i class="icon-user-1"></i>
+					<span>Buscar Usuário</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
