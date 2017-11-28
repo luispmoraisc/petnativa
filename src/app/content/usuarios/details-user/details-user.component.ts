@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { RequestsService } from './../../requests.service';
 import { User } from './../../../_models/index';
@@ -14,6 +14,7 @@ export class DetailsUserComponent implements OnInit {
 
 	constructor(
 		private route : ActivatedRoute,
+		private router : Router,
 		private location : Location,
 		private reqService : RequestsService,
 		private filtrar : Filter
@@ -34,6 +35,9 @@ export class DetailsUserComponent implements OnInit {
 	nActions : number;
 	
 	ngOnInit() {
+		let user = localStorage.getItem('userPet');
+		if(user === null || user === undefined)
+			this.router.navigate(['/entrar']);
 		document.getElementById('spinner').classList.remove('hidden');
 		this.getUser();
 		this.amostras = [{"key" : 10},{"key":25},{"key":50},{"key":100}];  	

@@ -15,7 +15,7 @@ export class SidebarComponent implements OnInit {
   screenW : any = (window.screen.availWidth);
   ngOnInit() {
 
-  	this.user = localStorage.getItem('user');
+  	this.user = localStorage.getItem('userPet');
   	this.sideService.openSide().subscribe((status) => {  		
   		if(status){
   			this.open = false;

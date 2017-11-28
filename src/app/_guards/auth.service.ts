@@ -13,13 +13,10 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class AuthService {
-	token : string;
 	private loginUrl : string;
 	constructor(private alertService : AlertService){
 		// para gravar a sessão no localStorage
-		var tokenStorage = JSON.parse(localStorage.getItem('tokenStorage'));
-		this.token = tokenStorage && tokenStorage.token;
-		this.loginUrl = Constants.END_POINT + 'token';
+		this.loginUrl = Constants.END_POINT;
 	}
 	
 	// se esta logado
@@ -31,13 +28,13 @@ export class AuthService {
 
 	// só injeta o nome no localStorage
 	login(username: string): Observable<any>{	
-		localStorage.setItem('user', username);
+		localStorage.setItem('userPet', username);
 		this.isLoggedIn = true;			
 		return Observable.of(true);
 	}	
 
 	logout(): void{
-		localStorage.removeItem('user');
+		localStorage.removeItem('userPet');
 		this.isLoggedIn = false;
 	}
 

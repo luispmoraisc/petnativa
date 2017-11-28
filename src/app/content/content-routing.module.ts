@@ -13,11 +13,13 @@ const routes: Routes = [
 		children: [
 			{ 
 				path: 'dashboard', 
-				loadChildren: './dashboard/dashboard.module#DashboardModule'
+				loadChildren: './dashboard/dashboard.module#DashboardModule',
+				canActivate: [AuthGuard]
 			},		
 			{
 				path: 'usuarios',
 				loadChildren: './usuarios/usuarios.module#UsuariosModule',
+				canActivate: [AuthGuard],
 				resolve: {
 					listUsers : ResolverUsers
 				}

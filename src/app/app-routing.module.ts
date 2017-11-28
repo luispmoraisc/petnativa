@@ -14,12 +14,12 @@ const appRoutes: Routes = [
 		canActivate: [AuthGuard]
 	},
     { 
-    	path: 'login', 
+    	path: 'entrar', 
     	component: LoginComponent
     },
     { 
     	path: '**', 
-    	redirectTo: 'login'
+    	redirectTo: 'entrar'
     }   
 ];
 

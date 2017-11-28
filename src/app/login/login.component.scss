@@ -15,3 +15,4 @@
 .content-frm img{margin-bottom: 15px; width: 120px}
 .content-frm .input-frm{height: 40px;line-height: 40px}
 .content-frm .input-frm:focus{border-left: 3px solid map-get($colors, greenDark / 2);}
+.content-frm button{width: 100%;margin-top: 10px; background: map-get($colors, warning); font-size: 16px; color:#fff; border: 0px; padding: 10px 10px; font-family: map-get($fonts,MyriadPro);text-transform: uppercase}

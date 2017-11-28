@@ -5,14 +5,18 @@ import { UsuariosComponent } from './usuarios.component';
 import { DetailsUserComponent } from './details-user/details-user.component';
 import { ReposComponent } from './repos/repos.component';
 
+import { AuthGuard } from './../../_guards/auth-guard.service';
+
 const routes: Routes = [
 	{
 		path: '',
-		component: UsuariosComponent		
+		component: UsuariosComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: 'details/:username',
-		component: DetailsUserComponent
+		component: DetailsUserComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: 'repos/:full_name',
@@ -21,14 +25,17 @@ const routes: Routes = [
 			{
 				path: '',
 				component: ReposComponent,
+				canActivate: [AuthGuard],
 				children:[
 					{
 						path: ':full_name',
-						component: ReposComponent
+						component: ReposComponent,
+						canActivate: [AuthGuard]
 					}
 				]
 			}
-		]
+		],
+		canActivate: [AuthGuard]
 	}
 ];
 

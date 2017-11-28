@@ -21,7 +21,7 @@ export class NavComponent implements OnInit {
 		if(this.screenW < 768){
 			this.open = false;
 		}
-		this.user = localStorage.getItem('user');
+		this.user = localStorage.getItem('userPet');
 	}
 
 	@HostListener('document:click',['$event'])

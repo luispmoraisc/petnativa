@@ -12,6 +12,7 @@ export class ReposComponent implements OnInit {
 
 	constructor(
 		private route : ActivatedRoute,
+		private router : Router,
 		private location : Location,
 		private reqService : RequestsService,
 		private url : LocationStrategy
@@ -19,14 +20,18 @@ export class ReposComponent implements OnInit {
 
 	repos : any;
 	ngOnInit() {
+		let user = localStorage.getItem('userPet');
+		if(user === null || user === undefined)
+			this.router.navigate(['/entrar']);
 		document.getElementById('spinner').classList.remove('hidden');
 		this.getRepos();
 	}
 
 	getRepos():void{		
-		let repo = this.url.path().split('/');
+		let repo = this.url.path().split('/');		
+		let last = repo.length - 1;
 		let user = this.route.params.subscribe((params: Params) => {
-			this.reqService.get<any>('repos/' + params['full_name'] +'/'+ repo[4])
+			this.reqService.get<any>('repos/' + params['full_name'] +'/'+ repo[last])
 				.subscribe((data)=>{
 					this.repos = data;
 					document.getElementById('spinner').classList.add('hidden');

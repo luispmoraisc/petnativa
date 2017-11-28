@@ -19,6 +19,9 @@ export class UsuariosComponent implements OnInit {
 	listUsers : Users[] = [];
 	filterString: string;
 	ngOnInit() {
+		let user = localStorage.getItem('userPet');
+		if(user === null || user === undefined)
+			this.router.navigate(['/entrar']);
 		this.listUsers = this.route.snapshot.data['listUsers'];
 	}
 

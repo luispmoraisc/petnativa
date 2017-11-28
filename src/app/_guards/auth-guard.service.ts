@@ -19,15 +19,15 @@ export class AuthGuard implements CanActivate {
 	}
 
 	checkLogin(url: string): boolean {		
-		var user = localStorage.getItem('user');
-		if (user) { return true; }
+		var user = localStorage.getItem('userPet');		
+		if (user !== '' || user !== null || user !== undefined) { return true; }
 
 		// Armazenar url de redirecionamento
 		this.authService.redirectUrl = url;
 
 		// Se não existe login redirecionar para login
 		this.alertService.error("Você não está logado", true);
-		this.router.navigate(['/login']);
+		this.router.navigate(['/entrar']);
 		return false;
 	}
 

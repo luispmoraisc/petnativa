@@ -75,7 +75,7 @@ export class RequestsService{
         else if(error.status === 401){   
             document.getElementById('spinner').classList.add('hidden');
             this.serviceAlert.error("Seu token expirou, estamos te redirecionando");                     
-            this.router.navigate(['/login']);                           
+            this.router.navigate(['/entrar']);                           
             return Observable.of(error);
         }
         else if(error.status === 400){     
